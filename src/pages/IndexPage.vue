@@ -2,6 +2,8 @@
 import { Todo, Meta } from 'components/models';
 import ExampleComponent from 'components/ExampleComponent.vue';
 import { ref } from 'vue';
+import HomeostatModule from 'src/components/HomeostatModule.vue';
+import PhaserContainer from 'src/components/PhaserContainer.vue';
 
 const todos = ref<Todo[]>([
   {
@@ -31,12 +33,30 @@ const meta = ref<Meta>({
 </script>
 
 <template>
-  <q-page class="row items-center justify-evenly">
-    <ExampleComponent
+  <q-page class="row justify-start">
+    <Suspense>
+      <PhaserContainer />
+
+      <template #fallback>
+        <div class="placeholder">Loading ...</div>
+      </template>
+    </Suspense>
+    <!-- <HomeostatModule /> -->
+    <!-- <ExampleComponent
       title="Example component"
       active
       :todos="todos"
       :meta="meta"
-    />
+    /> -->
   </q-page>
 </template>
+
+<style lang="scss">
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+</style>
