@@ -1,13 +1,10 @@
 <script lang="ts" setup>
 import { useQuasar } from 'quasar';
 import { ref } from 'vue';
-import EssentialLink from 'components/EssentialLink.vue';
-import { useRouter } from 'vue-router';
 import RouterLink from 'src/components/RouterLink.vue';
 import { useI18n } from 'vue-i18n';
 
 const $q = useQuasar();
-const router = useRouter();
 const linksList = [
   {
     title: 'Socket',
