@@ -2,51 +2,23 @@
 import { useQuasar } from 'quasar';
 import { ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
+import { useRouter } from 'vue-router';
+import RouterLink from 'src/components/RouterLink.vue';
 
 const $q = useQuasar();
-
+const router = useRouter();
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
+    title: 'Socket',
+    caption: 'testing',
     icon: 'school',
-    link: 'https://quasar.dev',
+    link: 'socket-test',
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
+    title: 'Index',
+    caption: 'game is here',
     icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
+    link: '',
   },
 ];
 
@@ -73,9 +45,8 @@ function toggleLeftDrawer() {
 
     <q-drawer v-model="leftDrawerOpen" :show-if-above="false" bordered>
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
+        <q-item-label header> Routes </q-item-label>
+        <RouterLink v-for="link in linksList" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
 
