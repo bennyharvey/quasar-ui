@@ -1,0 +1,9 @@
+version: '3'
+services:
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: homeostat_ui
+    ports:
+      - '$APP_PORT:80'
