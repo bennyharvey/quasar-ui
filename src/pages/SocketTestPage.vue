@@ -4,7 +4,7 @@ console.log(process.env.VUE_APP_SOMEKEY);
 </script>
 
 <template>
-  <p>Hi</p>
+  <p>{{ $t('greeting') }}</p>
 </template>
 
 <style lang="scss"></style>

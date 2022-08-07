@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
 import { useRouter } from 'vue-router';
 import RouterLink from 'src/components/RouterLink.vue';
+import { useI18n } from 'vue-i18n';
 
 const $q = useQuasar();
 const router = useRouter();
@@ -27,6 +28,11 @@ const version = ref('0.1.2');
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
+const { locale } = useI18n({ useScope: 'global' });
+const localeOptions = [
+  { value: 'en-US', label: 'English' },
+  { value: 'ru', label: 'Русский' },
+];
 </script>
 
 <template>
@@ -34,11 +40,19 @@ function toggleLeftDrawer() {
     <q-header elevated>
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
-
         <q-btn flat dense round icon="dark_mode" aria-label="Dark Mode Toggle" @click="$q.dark.toggle()" />
-
-        <q-toolbar-title> Homeostat UI </q-toolbar-title>
-
+        <q-toolbar-title> {{ $t('app.name') }} </q-toolbar-title>
+        <q-select
+          v-model="locale"
+          :options="localeOptions"
+          label="Language"
+          dense
+          borderless
+          emit-value
+          map-options
+          options-dense
+          style="min-width: 150px"
+        />
         <div>v{{ version }}</div>
       </q-toolbar>
     </q-header>
