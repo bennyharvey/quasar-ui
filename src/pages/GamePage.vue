@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useQuasar } from 'quasar';
 import { io } from 'socket.io-client';
+import { useMainStore } from 'src/stores/main-store';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import GameStats from '../components/GameStats.vue';
@@ -12,7 +13,7 @@ const roomName = 'game1';
 // const socketId = ref(socket);
 const playerName = ref('');
 const gameData = ref({ data: {} });
-
+const flipflop = ref(false);
 socket.on('connect', () => {
   console.log('Connected with id = ' + socket.id);
 });
@@ -24,6 +25,8 @@ socket.on('gameplay', (data) => {
   console.log('gameplay:');
   gameData.value = data;
   console.log(data);
+  // flipflop.value = flipflop.value ? false : true;
+  store.triggerFlipflop();
 });
 
 function handleJoinButton() {
@@ -36,9 +39,13 @@ function handleJoinButton() {
   }
   socket.emit('joinGame', { roomName: roomName, playerName: playerName.value });
 }
-
+const store = useMainStore();
 function handleIncreaseButton() {
   socket.emit('increaseValue', { by: 1 });
+}
+
+function handleDecreaseButton() {
+  socket.emit('decreaseValue', { by: 1 });
 }
 </script>
 
@@ -48,9 +55,10 @@ function handleIncreaseButton() {
       <p>{{ $t('greeting') }}</p>
       <q-input filled v-model="playerName" :label="$t('name')" />
       <q-btn push color="primary" :label="$t('join')" @click="handleJoinButton" />
+      <q-btn push color="primary" label="-" @click="handleDecreaseButton" />
       <q-btn push color="primary" label="+" @click="handleIncreaseButton" />
     </div>
-    <div class="col"><GameStats :data="gameData.data" /></div>
+    <div class="col"><GameStats :data="gameData.data" :f="flipflop" /></div>
   </div>
 </template>
 
