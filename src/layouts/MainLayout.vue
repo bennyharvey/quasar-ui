@@ -10,7 +10,7 @@ const linksList = [
     title: 'Socket',
     caption: 'testing',
     icon: 'school',
-    link: 'socket-test',
+    link: 'game',
   },
   {
     title: 'Index',
