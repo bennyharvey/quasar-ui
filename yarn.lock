@@ -115,6 +115,11 @@
     "@intlify/runtime" "9.1.10"
     "@intlify/shared" "9.1.10"
 
+"@keeex/qrcodejs-kx@^1.0.2":
+  "integrity" "sha512-YsCxWGO4P/ietkyTGV2YMAbwyYdFHJEfP48AcHQVAgJe6ybON/y8DAcHHdE9yItSKRQeQJ4tad9+wCPfZNH4mw=="
+  "resolved" "https://registry.npmjs.org/@keeex/qrcodejs-kx/-/qrcodejs-kx-1.0.2.tgz"
+  "version" "1.0.2"
+
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -2534,6 +2539,11 @@
   "resolved" "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
   "version" "2.1.1"
 
+"qrcode.vue@^3.3.3":
+  "integrity" "sha512-OsD4tQjIbxg/K6D5ZkWjBdYI9eg9K2i8qeYILdEAX5mdAydSAxV7xKmmZSP/hA12olLqEMZ9ryqDQrwa9jEMgw=="
+  "resolved" "https://registry.npmjs.org/qrcode.vue/-/qrcode.vue-3.3.3.tgz"
+  "version" "3.3.3"
+
 "qs@~6.5.2":
   "integrity" "sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA=="
   "resolved" "https://registry.npmjs.org/qs/-/qs-6.5.3.tgz"
@@ -3264,12 +3274,25 @@
     "@intlify/vue-devtools" "9.1.10"
     "@vue/devtools-api" "^6.0.0-beta.7"
 
+"vue-qr-generator@^3.0.1":
+  "integrity" "sha512-1JkU1v3VP6tZKXqn/EeYDz61/m9yXdY3CZSg5yf7EC6P6G6wFpHKghJTbdWSncc54ZOSYIQ3PK8F8GLZ5oB77A=="
+  "resolved" "https://registry.npmjs.org/vue-qr-generator/-/vue-qr-generator-3.0.1.tgz"
+  "version" "3.0.1"
+  dependencies:
+    "@keeex/qrcodejs-kx" "^1.0.2"
+    "vue" "^2.0.1"
+
 "vue-router@^4.0.0", "vue-router@^4.0.12":
   "integrity" "sha512-JcO7cb8QJLBWE+DfxGUL3xUDOae/8nhM1KVdnudadTAORbuxIC/xAydC5Zr/VLHUDQi1ppuTF5/rjBGzgzrJNA=="
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-4.0.16.tgz"
   "version" "4.0.16"
   dependencies:
     "@vue/devtools-api" "^6.0.0"
+
+"vue@^2.0.1":
+  "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
+  "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
+  "version" "2.6.14"
 
 "vue@^2.6.14 || ^3.2.0", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.29", "vue@3.2.37":
   "integrity" "sha512-bOKEZxrm8Eh+fveCqS1/NkG/n6aMidsI6hahas7pa0w/l7jkbssJVsRhVDs07IdDq7h9KHswZOgItnwJAgtVtQ=="

@@ -12,7 +12,25 @@ export default class PlayScene extends Scene {
     bomb.setCollideWorldBounds(true);
     bomb.body.onWorldBounds = true; // enable worldbounds collision event
     bomb.setBounce(1);
-    bomb.setVelocity(200, 20);
+    bomb.setVelocity(100, 20);
+
+    const bomb1 = this.physics.add.image(400, 100, 'bomb');
+    bomb1.setCollideWorldBounds(true);
+    bomb1.body.onWorldBounds = true; // enable worldbounds collision event
+    bomb1.setBounce(1);
+    bomb1.setVelocity(70, 30);
+
+    const bomb2 = this.physics.add.image(400, 100, 'bomb');
+    bomb2.setCollideWorldBounds(true);
+    bomb2.body.onWorldBounds = true; // enable worldbounds collision event
+    bomb2.setBounce(1);
+    bomb2.setVelocity(160, 40);
+
+    const bomb3 = this.physics.add.image(400, 100, 'bomb');
+    bomb3.setCollideWorldBounds(true);
+    bomb3.body.onWorldBounds = true; // enable worldbounds collision event
+    bomb3.setBounce(1);
+    bomb3.setVelocity(220, 50);
 
     this.sound.add('thud');
     this.physics.world.on('worldbounds', () => {
