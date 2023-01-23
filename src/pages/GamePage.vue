@@ -8,7 +8,10 @@ import GameStats from '../components/GameStats.vue';
 const { t } = useI18n();
 const $q = useQuasar();
 
-const socket = io('http://localhost:50201');
+const host = 'localhost';
+// const host = '194.87.97.155';
+
+const socket = io('http://' + host + ':50201');
 const roomName = 'game1';
 // const socketId = ref(socket);
 const playerName = ref('');
