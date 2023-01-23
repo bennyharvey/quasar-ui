@@ -15,12 +15,14 @@
     "appversion": "^1.7.1",
     "axios": "^0.21.1",
     "dotenv": "^16.0.1",
+    "konva": "^8.3.11",
     "phaser": "^3.55.2",
     "pinia": "^2.0.11",
     "quasar": "^2.6.0",
     "socket.io-client": "^4.5.1",
-    "vue": "^3.0.0",
+    "vue": "^3.2.37",
     "vue-i18n": "^9.0.0",
+    "vue-konva": "^3.0.1",
     "vue-router": "^4.0.0"
   },
   "devDependencies": {
